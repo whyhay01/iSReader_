@@ -21,7 +21,7 @@ class ReadingTime extends StatelessWidget {
            child: Container(
              // color: Colors.white,
 
-             margin: EdgeInsets.fromLTRB(20.0, 10.0, 10.0, 20.0),
+             margin: EdgeInsets.fromLTRB(20.0, 20.0, 10.0, 20.0),
              height:MediaQuery.of(context).size.height * .2,
              width:MediaQuery.of(context).size.width * 1 ,
                // child: LineChartReader(),
@@ -31,7 +31,9 @@ class ReadingTime extends StatelessWidget {
                    Text('Reading time',
                    style: TextStyle(
                      color: Colors.black,
+                     fontSize: 18,
                      fontWeight: FontWeight.bold,
+                     letterSpacing: 1
                    )),
                    SizedBox(height: 20,),
                    Expanded(child: LineChartReader())

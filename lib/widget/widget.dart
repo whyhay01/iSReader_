@@ -93,7 +93,7 @@ class NavigationDrawerWidget extends StatelessWidget {
         navigateTo(GetStartedPage());
         break;
       case 1:
-        navigateTo(SamplesPage());
+        navigateTo(MyBooksPage());
         break;
       case 2:
         navigateTo(TestingPage());

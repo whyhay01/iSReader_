@@ -1,9 +1,8 @@
-import 'dart:html';
 
 import 'package:flutter/cupertino.dart';
 
 class Book{
-  late AssetImage bookIcon;
+  late NetworkImage bookIcon;
   late String bookTitle;
   late String author;
   late int numOfPages;

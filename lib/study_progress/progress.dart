@@ -30,7 +30,10 @@ class _StudyProgressState extends State<StudyProgress> {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Text('Study progress',
-              style: ProgressList().setTextStyle(),),
+              style: TextStyle(color: Colors.black,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 1)),
             ),
 
             SizedBox(height: 10,),

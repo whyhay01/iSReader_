@@ -2,13 +2,15 @@
 import 'package:flutter/cupertino.dart';
 
 class Book{
+  late int bookId;
   late NetworkImage bookIcon;
   late String bookTitle;
-  late String author;
-  late int numOfPages;
+  late String path;
+  // late String author;
+  // late int numOfPages;
 
-  Book({ required this.bookIcon, required this.bookTitle,
-    required this.author,  required this.numOfPages});
+  Book({ required this.bookId, required this.bookIcon, required this.bookTitle,
+     required this.path});
 
   Book.withoutAuthor({required this.bookIcon, required this.bookTitle});
 

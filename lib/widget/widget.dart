@@ -1,15 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:i_s_reader/data/drawer_items.dart';
 import 'package:i_s_reader/model/drawer_item.dart';
 import 'package:i_s_reader/pages/about_page.dart';
+import 'package:i_s_reader/pages/assessment_page.dart';
+import 'package:i_s_reader/pages/my_books_page.dart';
 import 'package:i_s_reader/pages/my_dashboard_page.dart';
 import 'package:i_s_reader/pages/setting_page.dart';
 import 'package:i_s_reader/pages/terms_and_condition_page.dart';
-import 'package:i_s_reader/pages/my_books_page.dart';
-import 'package:i_s_reader/pages/assessment_page.dart';
 import 'package:i_s_reader/provider/navigation_provider.dart';
-import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
@@ -18,7 +18,7 @@ class NavigationDrawerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final safeArea =
-    EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top);
+        EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top);
 
     final provider = Provider.of<NavigationProvider>(context);
     final isCollapsed = provider.isCollapsed;
@@ -83,8 +83,8 @@ class NavigationDrawerWidget extends StatelessWidget {
 
   void selectItem(BuildContext context, int index) {
     final navigateTo = (page) => Navigator.of(context).push(MaterialPageRoute(
-      builder: (context) => page,
-    ));
+          builder: (context) => page,
+        ));
 
     Navigator.of(context).pop();
 
@@ -123,14 +123,14 @@ class NavigationDrawerWidget extends StatelessWidget {
       color: Colors.transparent,
       child: isCollapsed
           ? ListTile(
-        title: leading,
-        onTap: onClicked,
-      )
+              title: leading,
+              onTap: onClicked,
+            )
           : ListTile(
-        leading: leading,
-        title: Text(text, style: TextStyle(color: color, fontSize: 16)),
-        onTap: onClicked,
-      ),
+              leading: leading,
+              title: Text(text, style: TextStyle(color: color, fontSize: 16)),
+              onTap: onClicked,
+            ),
     );
   }
 
@@ -141,23 +141,23 @@ class NavigationDrawerWidget extends StatelessWidget {
     final margin = isCollapsed ? null : EdgeInsets.only(right: 16);
     final width = isCollapsed ? double.infinity : size;
 
-    return Container(
-      alignment: alignment,
-      margin: margin,
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
+    return InkWell(
+      onTap: () {
+        final provider =
+            Provider.of<NavigationProvider>(context, listen: false);
+
+        provider.toggleIsCollapsed();
+      },
+      child: Container(
+        alignment: alignment,
+        margin: margin,
+        child: Material(
+          color: Colors.transparent,
           child: Container(
             width: width,
             height: size,
             child: Icon(icon, color: Colors.white),
           ),
-          onTap: () {
-            final provider =
-            Provider.of<NavigationProvider>(context, listen: false);
-
-            provider.toggleIsCollapsed();
-          },
         ),
       ),
     );
@@ -165,34 +165,38 @@ class NavigationDrawerWidget extends StatelessWidget {
 
   Widget buildHeader(bool isCollapsed) => isCollapsed
       ? CircleAvatar(
-    radius: 45,
-    backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQzg2-modiBeSBIckt_NcpipPPGQfZA_dbQ&usqp=CAU'),
-  )
+          radius: 45,
+          backgroundImage: NetworkImage(
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQzg2-modiBeSBIckt_NcpipPPGQfZA_dbQ&usqp=CAU'),
+        )
       : Row(
-    children: [
-      const SizedBox(width: 24),
-      CircleAvatar(
-        radius: 45,
-        backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQzg2-modiBeSBIckt_NcpipPPGQfZA_dbQ&usqp=CAU'),
-      ),
-      const SizedBox(width: 26),
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Hello',
-            style: TextStyle(
-              fontSize: 20, color: Colors.white,
+          children: [
+            const SizedBox(width: 24),
+            CircleAvatar(
+              radius: 45,
+              backgroundImage: NetworkImage(
+                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQzg2-modiBeSBIckt_NcpipPPGQfZA_dbQ&usqp=CAU'),
             ),
-          ),
-          SizedBox(height: 10,),
-
-          Text( 'Yakub' ,
-            style: TextStyle(fontSize: 32, color: Colors.white),
-          ),
-        ],
-      )
-
-    ],
-  );
+            const SizedBox(width: 26),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Hello',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  'Yakub',
+                  style: TextStyle(fontSize: 32, color: Colors.white),
+                ),
+              ],
+            )
+          ],
+        );
 }

@@ -3,6 +3,7 @@ import 'package:i_s_reader/analytics/reading_time.dart';
 import 'package:i_s_reader/assessment_history/assessment_display.dart';
 import 'package:i_s_reader/provider/navigation_provider.dart';
 import 'package:i_s_reader/study_progress/progress.dart';
+import 'package:i_s_reader/widget/splash.dart';
 import 'package:i_s_reader/widget/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -15,7 +16,12 @@ Future main() async {
     DeviceOrientation.portraitDown,
   ]);
 
-  runApp(MyApp());
+  runApp(MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home:
+      Splash()
+  )
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -25,7 +31,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) => ChangeNotifierProvider(
     create: (context) => NavigationProvider(),
     child: MaterialApp(
-      debugShowCheckedModeBanner: false,
       // title: title,
       theme: ThemeData(primarySwatch: Colors.deepOrange),
       home: MainPage(),

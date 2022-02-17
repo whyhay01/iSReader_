@@ -17,7 +17,8 @@ class BookContainer extends StatefulWidget {
 
 class _BookContainerState extends State<BookContainer> {
   @override
-  Widget setBookContainer(){
+  Widget build(BuildContext context) {
+  // setBookContainer(){
     return Expanded(child: Card(
       // margin: EdgeInsets.fromLTRB(15, 20.0, 10.0, 10.0),
       // height: MediaQuery.of(context).size.height * .3,
@@ -35,11 +36,9 @@ class _BookContainerState extends State<BookContainer> {
                     fontSize: 12,
                     fontWeight: FontWeight.normal)
             ),
-              onPressed: widget.bookOnPressed(),
-              icon: Icon(Icons.accessibility_sharp,size: 0.1,),
+              onPressed:() => widget.bookOnPressed(),
+              icon: Icon(Icons.accessibility_sharp,size: 5.0,),
             ),)
-
-
 
 
           ],
@@ -51,13 +50,13 @@ class _BookContainerState extends State<BookContainer> {
 
   }
 
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
-  }
-
-  // bookOnPressed() {}
+  // @override
+  // Widget build(BuildContext context) {
+  //   // TODO: implement build
+  //   throw UnimplementedError();
+  // }
+  //
+  // // bookOnPressed() {}
 }
 
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class PerformancePage extends StatelessWidget {
+class SettingsPage extends StatelessWidget {
   @override
 
   static const int backgroundColor = 0xff4460f2;

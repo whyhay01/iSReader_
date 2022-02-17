@@ -29,8 +29,8 @@ class _JuniorClassOneState extends State<JuniorClassOne> {
       crossAxisSpacing: 10,
       padding: EdgeInsets.all(10.0),
 
-    children: bookModel.books.map((book)=> BookContainer(image: book.bookIcon,
-    text: book.bookTitle, bookOnPressed: (){onClickBook(book.path, book.bookId, book.bookTitle);}).setBookContainer()
+    children: bookModel.books.map<Widget>((book)=> BookContainer(image: book.bookIcon,
+    text: book.bookTitle, bookOnPressed: (){onClickBook(book.path, book.bookId, book.bookTitle);})
     ).toList());
   }
 

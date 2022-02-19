@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:i_s_reader/data/drawer_items.dart';
+import 'package:i_s_reader/main.dart';
 import 'package:i_s_reader/model/drawer_item.dart';
 import 'package:i_s_reader/pages/about_page.dart';
 import 'package:i_s_reader/pages/assessment_page.dart';
@@ -29,7 +30,7 @@ class NavigationDrawerWidget extends StatelessWidget {
       width: isCollapsed ? MediaQuery.of(context).size.width * 0.2 : null,
       child: Drawer(
         child: Container(
-          color: Color(PerformancePage.backgroundColor),
+          color: Color(SettingsPage.backgroundColor),
           child: Column(
             children: [
               Container(
@@ -90,22 +91,19 @@ class NavigationDrawerWidget extends StatelessWidget {
 
     switch (index) {
       case 0:
-        navigateTo(GetStartedPage());
-        break;
-      case 1:
         navigateTo(MyBooksPage());
         break;
+      case 1:
+        navigateTo(AssessmentPage());
+        break;
       case 2:
-        navigateTo(TestingPage());
+        navigateTo(SettingsPage());
         break;
       case 3:
-        navigateTo(PerformancePage());
+        navigateTo(AboutPage());
         break;
       case 4:
-        navigateTo(DeploymentPage());
-        break;
-      case 5:
-        navigateTo(ResourcesPage());
+        navigateTo(TermsAndConditionPage());
         break;
     }
   }

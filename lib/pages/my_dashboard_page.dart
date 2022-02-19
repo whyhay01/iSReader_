@@ -7,7 +7,7 @@ class GetStartedPage extends StatelessWidget {
     appBar: AppBar(
       title: Text('My Dashboard'),
       centerTitle: true,
-      backgroundColor: Color(PerformancePage.backgroundColor),
+      backgroundColor: Color(SettingsPage.backgroundColor),
     ),
   );
 }

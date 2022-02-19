@@ -7,6 +7,7 @@ class MyBooksPage extends StatelessWidget {
   @override
   Widget build(BuildContext context){
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
       home:DefaultTabController(
         length: 3,
         child: Scaffold(
@@ -57,7 +58,7 @@ class MyBooksPage extends StatelessWidget {
               color: Colors.white
             ),),
             centerTitle: false,
-            backgroundColor: Color(PerformancePage.backgroundColor),
+            backgroundColor: Color(SettingsPage.backgroundColor),
           ),
           body: TabBarView(children: [
             JuniorClassOne(),
